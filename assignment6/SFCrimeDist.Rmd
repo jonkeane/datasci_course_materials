@@ -5,6 +5,10 @@ date: "28 November, 2015"
 output: html_document
 ---
 
+## Primary finding
+
+Crime reports are not evenly distributed across the city of San Francisco. This distribution is not even with respect to geography, population density, or crime report type. The areas around the Hayes Valley, Tenderloin, North and South of Market, Mission, and Bernal Heights neighborhoods have more crime reports than many other parts of the city. This is true even though those areas are not the most populated areas in the city (that is, they have high per capite crime report rates). Finally, the types of crime reports are not evenly distributed across the city. There are more substance-related crime reports around the Hayes Valley, Tenderloin, and North of Market neighborhoods than in other parts of the city and there are more theft-related crime reports around the South of Market neighborhood than other parts of the city.
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 # load relevant libraries
 library(ggplot2)
@@ -88,10 +92,6 @@ zipData <- merge(zipData, sfzips@data, by="id")
 # create centroid labels
 zipLabels <- zipData %>% group_by(ZIP_CODE) %>% summarise(long = mean(range(long)), lat = mean(range(lat)))
 ```
-
-## Primary finding
-
-Crime reports are not evenly distributed across the city of San Francisco. This distribution is not even with respect to geography, population density, or crime report type. The areas around the Hayes Valley, Tenderloin, North and South of Market, Mission, and Bernal Heights neighborhoods have more crime reports than many other parts of the city. This is true even though those areas are not the most populated areas in the city (that is, they have high per capite crime report rates). Finally, the types of crime reports are not evenly distributed across the city. There are more substance-related crime reports around the Hayes Valley, Tenderloin, and North of Market neighborhoods than in other parts of the city and there are more theft-related crime reports around the South of Market neighborhood than other parts of the city.
 
 ## Supporting materials
 
